@@ -1,35 +1,43 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "meshStack Documentation Hub",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#5ecee8",
+    "light": "#5ECEE8",
+    "dark": "#5ECEE8"
   },
-  "favicon": "/favicon.svg",
+  "fonts": {
+    "heading": {
+      "family": "Montserrat Bold",
+      "source": "https://mintlify-assets.b-cdn.net/fonts/montserrat-v25-latin-600.woff2",
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Montserrat",
+      "source": "https://mintlify-assets.b-cdn.net/fonts/montserrat-v25-latin-regular.woff2",
+      "format": "woff2"
+    }
+  },
+  "favicon": "/favicon.png",
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "User Docs",
             "pages": [
-              "introduction",
-              "quickstart",
-              "development"
+              "userdocs/overview",
+              "userdocs/marketplace-overview",
+              "userdocs/workspace"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Administrator Docs",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "admindocs/replication",
+              "admindocs/onboarding"
             ]
           }
         ]
@@ -38,18 +46,11 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "API Endpoints",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/endpoint1",
+              "api-reference/endpoint/endpoint2",
+              "api-reference/endpoint/endpoint3"
             ]
           }
         ]
@@ -58,45 +59,40 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
+          "href": "https://cloudfoundation.org/",
           "icon": "slack"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://meshcloud.io/en/blog/",
           "icon": "newspaper"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://www.meshcloud.io/en/company/contact/"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Book Demo",
+      "href": "https://www.meshcloud.io/en/book-demo/"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/meshstack",
+      "github": "https://github.com/meshcloud",
+      "linkedin": "https://www.linkedin.com/company/meshcloud"
     }
   }
 }
