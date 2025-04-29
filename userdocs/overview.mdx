@@ -14,7 +14,7 @@ The actual cloud platforms and services that are available to you depend on the 
 
 To work with meshStack, the following concepts are of importance:
 
-* [Workspace](/docs/meshcloud.workspace.html): The workspace is the highest level that you will work with. In here, you will invite your entire team of managers, developers and more. In the workspace you will create one or more projects.
+* [Customer](/docs/meshcloud.customer.html): The customer is the highest level that you will work with. In here, you will invite your entire team of managers, developers and more. In the customer you will create one or more projects.
 * [Project](/docs/meshcloud.project.html): The project is a cloud-agnostic concept which usually maps to an environment of an application that you and your team are developing. The project will have a payment method assigned that acts as the budget. On the project you invite team members that are needed for that environment, e.g. for a production project you will invite your SRES. Within the project, you will have one or more cloud tenants.
 * [Tenant](/docs/meshcloud.tenant.html): The tenant is an isolated and tangible place in an actual cloud provider. It depends on what cloud you use what this maps to. For example for AWS this maps to an `Account`, for Azure this is a `Subscription` and for Google Cloud it is a `Project`. meshStack can easily let you log in and redirect you to the tenant in the respective cloud provider.
 * [Landing Zone](/docs/meshcloud.landing-zones.html): The landing zone is a template created by your organization that you pick when you create a new tenant. It cannot be changed afterward. The idea of the landing zone is that you already get a set of policies and perhaps resources to start using the cloud right away according to the compliance and best practices of your organization.
@@ -23,15 +23,15 @@ To work with meshStack, the following concepts are of importance:
 
 ## meshPanel
 
-The meshPanel is the self-service user interface for meshStack and provides different control planes to manage various aspects of your workspace depending on your rights:
+The meshPanel is the self-service user interface for meshStack and provides different control planes to manage various aspects of your customer depending on your rights:
 
-* [workspace control plane](/docs/meshcloud.workspace.html#managing-your-meshworkspace): Manage the access of your team members in your [meshWorkspace](/docs/meshcloud.workspace.html), change the tags or check the available payment methods for your meshWorkspace.
+* [customer control plane](/docs/meshcloud.customer.html#managing-your-meshcustomer): Manage the access of your team members in your [meshCustomer](/docs/meshcloud.customer.html), change the tags or check the available payment methods for your meshCustomer.
 
 * [project control plane](/docs/meshcloud.project.html#manage-meshprojects): Get an overview of all tenants of your [meshProject](/docs/meshcloud.project.html). Add new team members to it or change the payment methods of your project.
 
 * [tenant control plane](/docs/meshcloud.tenant.html#using-your-tenant): Access the platform of your [meshTenant](/docs/meshcloud.tenant.html), request Quotas for it or check the [usage reports](/docs/meshcloud.cost-management.html#tenant-usage-reports).
 
-The above description serves as an example what you are able to do as Workspace Manager. Workspace Members will have a lot less access rights. Check out [Workspace Roles](/docs/meshcloud.workspace.html#meshworkspace-roles) for more details.
+The above description serves as an example what you are able to do as Customer Manager. Customer Members will have a lot less access rights. Check out [Customer Roles](/docs/meshcloud.customer.html#meshcustomer-roles) for more details.
 
 > If you are an administrator, please be aware that there are a lot more user interfaces available to you. Read more in the [Admin Docs](/docs/meshstack.index.html)
 
