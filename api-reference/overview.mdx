@@ -1,0 +1,155 @@
+---
+title: "meshStack API Overview"
+description: "Learn how to use the meshStack API to automate and integrate with your cloud infrastructure"
+---
+
+# Introduction to meshStack API
+
+The meshStack API enables you to programmatically interact with your cloud infrastructure and workspace management. This RESTful API provides endpoints for managing workspaces, mesh objects, and authentication, allowing you to automate common tasks and integrate meshStack with your existing tools and workflows.
+
+## Authentication
+
+All API requests must be authenticated. meshStack supports two authentication methods:
+
+### API Key Authentication
+
+<Note>
+  API keys provide secure access to the meshStack API. You can create an API key using the [Create API Key](/api-reference/endpoint/endpoint3) endpoint.
+</Note>
+
+To authenticate your requests, include your API key in the `Authorization` header:
+
+```bash
+Authorization: Basic <your-api-key>
+```
+
+### User Authentication
+
+For user-based operations, you can authenticate using your meshStack credentials through the login endpoint.
+
+## Common Request Patterns
+
+### Content Types
+
+The API supports multiple content types for different operations:
+
+- JSON: `application/vnd.meshcloud.api.{resource}.v1+json`
+- YAML: `application/vnd.meshcloud.api.{resource}.v1+yaml`
+
+Always specify the appropriate content type in your request headers:
+
+```bash
+Content-Type: application/vnd.meshcloud.api.meshobjects.v1+yaml;charset=UTF-8
+Accept: application/vnd.meshcloud.api.meshobjects.v1+json
+```
+
+### API Endpoints
+
+meshStack provides several key endpoints for different operations:
+
+<CardGroup cols={2}>
+  <Card title="Get API" icon="magnifying-glass">
+    Basic API information and status checking
+  </Card>
+  <Card title="Mesh Objects" icon="cubes">
+    Manage mesh objects and collections
+  </Card>
+  <Card title="Authentication" icon="key">
+    Handle API keys and user authentication
+  </Card>
+  <Card title="Workspace Management" icon="building">
+    Control workspace settings and permissions
+  </Card>
+</CardGroup>
+
+## Working with Mesh Objects
+
+Mesh objects are core entities in meshStack that represent various resources and configurations. Here's how to work with them:
+
+### Collections
+
+<Accordion title="Managing Mesh Object Collections">
+  Mesh object collections help you organize and manage related mesh objects together. You can:
+  - Create collections to group related objects
+  - Import existing objects into collections
+  - Manage permissions and ownership at the collection level
+  - Delete collections when no longer needed using the [Delete Mesh Object Collections](/api-reference/endpoint/endpoint2) endpoint
+</Accordion>
+
+### Common Operations
+
+<Steps>
+  <Step title="Create or Import Objects">
+    Use PUT requests to create or import mesh objects:
+    ```bash
+    curl --location --request PUT 'https://backend-url/api/meshobjects' \
+    --header 'Content-Type: application/vnd.meshcloud.api.meshobjects.v1+yaml' \
+    --header 'Authorization: Basic <your-api-key>' \
+    --data-raw 'apiVersion: v1
+    kind: meshWorkspaceUserBinding
+    # ... object definition
+    '
+    ```
+  </Step>
+  <Step title="Query Objects">
+    Retrieve object information using GET requests:
+    ```bash
+    curl --location --request GET 'https://backend-url/api/meshobjects/<object-id>' \
+    --header 'Authorization: Basic <your-api-key>'
+    ```
+  </Step>
+  <Step title="Update Objects">
+    Modify existing objects using PUT requests with updated definitions
+  </Step>
+</Steps>
+
+## Error Handling
+
+The API uses standard HTTP status codes to indicate the success or failure of requests:
+
+<ResponseField name="2xx Success" type="number">
+  The request was successful
+</ResponseField>
+
+<ResponseField name="4xx Client Error" type="number">
+  The request was invalid or unauthorized
+</ResponseField>
+
+<ResponseField name="5xx Server Error" type="number">
+  An error occurred on the server
+</ResponseField>
+
+<Warning>
+  Always handle errors appropriately in your applications and implement proper retry logic for transient failures.
+</Warning>
+
+## Best Practices
+
+1. **Rate Limiting**: Implement appropriate rate limiting in your applications to avoid hitting API limits.
+2. **Error Handling**: Always check for and handle error responses appropriately.
+3. **Content Types**: Use the correct content type headers for your requests.
+4. **Authentication**: Keep your API keys secure and rotate them regularly.
+5. **Collections**: Use mesh object collections to organize related resources together.
+
+## Example Use Cases
+
+### Changing Workspace Ownership
+
+A common use case is changing workspace ownership, which involves:
+1. Creating a mesh object collection
+2. Importing existing workspace owners
+3. Setting new workspace owners
+
+For detailed steps, see the [How To Change The Workspace Owner](/userdocs/workspace) guide.
+
+## Getting Help
+
+If you encounter issues or need assistance:
+- Check the API documentation for specific endpoints
+- Ensure you're using the correct content types and authentication
+- Verify your API permissions match your intended operations
+- Contact support for additional help
+
+<Tip>
+  Keep your API keys secure and never share them in public repositories or support requests.
+</Tip>
