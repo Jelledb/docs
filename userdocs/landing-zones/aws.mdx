@@ -1,0 +1,170 @@
+---
+title: "AWS Landing Zones"
+---
+
+# AWS Landing Zones in meshStack
+
+meshStack provides comprehensive support for AWS landing zones, enabling organizations to provision and manage AWS accounts according to enterprise standards and best practices. This guide explains how meshStack implements AWS landing zones and what you can expect when using them.
+
+## Overview
+
+AWS landing zones in meshStack are built on top of AWS Organizations and can optionally integrate with AWS Control Tower. They provide a standardized way to create and manage AWS accounts while ensuring compliance with your organization's security, compliance, and operational requirements.
+
+<Info>
+  Landing zones are templates that define the baseline configuration, security controls, and networking setup for new AWS accounts. They help ensure that all AWS accounts in your organization follow consistent standards from day one.
+</Info>
+
+## Key Components
+
+### AWS Organizations Integration
+
+meshStack works directly with AWS Organizations to:
+
+- Create new AWS accounts
+- Manage organizational units (OUs)
+- Apply Service Control Policies (SCPs)
+- Configure consolidated billing
+- Implement cross-account access controls
+
+### AWS Control Tower Integration
+
+When using AWS Control Tower, meshStack can:
+
+<AccordionGroup>
+  <Accordion title="Account Factory Integration" icon="industry">
+    Leverage AWS Control Tower's Account Factory for automated account provisioning with pre-configured guardrails and compliance controls.
+  </Accordion>
+  
+  <Accordion title="Guardrails Management" icon="shield">
+    Apply preventive and detective guardrails across your AWS organization to enforce security and compliance requirements.
+  </Accordion>
+  
+  <Accordion title="Compliance Monitoring" icon="clipboard-check">
+    Integrate with AWS Control Tower's compliance monitoring features to ensure accounts maintain compliance over time.
+  </Accordion>
+</AccordionGroup>
+
+## Available Landing Zone Templates
+
+meshStack typically offers several AWS landing zone templates to meet different use cases:
+
+<CardGroup cols={2}>
+  <Card title="Development Landing Zone" icon="code">
+    Optimized for development and testing environments with moderate security controls and cost management features.
+  </Card>
+  
+  <Card title="Production Landing Zone" icon="industry">
+    Enhanced security controls, backup policies, and monitoring for production workloads.
+  </Card>
+  
+  <Card title="Sandbox Landing Zone" icon="flask">
+    Limited access and budget controls for experimentation and learning.
+  </Card>
+  
+  <Card title="Compliance Landing Zone" icon="shield-check">
+    Strict security controls and audit logging for regulated workloads.
+  </Card>
+</CardGroup>
+
+## Features and Capabilities
+
+### Automated Account Configuration
+
+When a new AWS account is provisioned through meshStack, the landing zone automatically:
+
+<Steps>
+  <Step title="Account Creation">
+    Creates a new AWS account with standardized naming and tagging
+  </Step>
+  
+  <Step title="IAM Configuration">
+    Sets up IAM roles, policies, and permission boundaries
+  </Step>
+  
+  <Step title="Network Setup">
+    Configures VPC, subnets, and network controls according to template specifications
+  </Step>
+  
+  <Step title="Security Controls">
+    Implements security services like AWS Config, CloudTrail, and SecurityHub
+  </Step>
+</Steps>
+
+### Governance and Compliance
+
+meshStack's AWS landing zones include:
+
+- Built-in compliance controls aligned with common frameworks (e.g., CIS, NIST)
+- Automated audit logging and monitoring
+- Cost management and budget controls
+- Resource tagging policies
+- Data protection measures
+
+## Using AWS Landing Zones
+
+### Selection Process
+
+When creating a new AWS account in meshStack:
+
+1. Navigate to the tenant creation workflow
+2. Select AWS as your cloud platform
+3. Choose from available landing zone templates
+4. Provide required configuration parameters
+5. Submit the request for automated provisioning
+
+### Configuration Options
+
+<Expandable title="Common Configuration Parameters">
+  <ResponseField name="Account Name" type="string" required>
+    The display name for the AWS account
+  </ResponseField>
+  
+  <ResponseField name="Environment Type" type="string" required>
+    The intended use (e.g., development, production)
+  </ResponseField>
+  
+  <ResponseField name="Cost Center" type="string" required>
+    Billing and cost allocation identifier
+  </ResponseField>
+  
+  <ResponseField name="Network Configuration" type="object">
+    VPC and subnet specifications
+  </ResponseField>
+</Expandable>
+
+## Best Practices
+
+<Tip>
+  Always select a landing zone template that matches your workload's security and compliance requirements. Upgrading security controls after deployment can be complex.
+</Tip>
+
+### Recommended Approaches
+
+1. Start with a more restrictive landing zone and relax controls if needed
+2. Use separate accounts for different environments (dev, test, prod)
+3. Implement consistent tagging strategies across accounts
+4. Regularly review and update landing zone configurations
+
+## Limitations and Considerations
+
+- Some AWS services may be restricted based on landing zone policies
+- Modification of core landing zone components requires administrator intervention
+- Custom landing zone templates may require additional setup and maintenance
+
+## Support and Troubleshooting
+
+If you encounter issues with your AWS landing zone:
+
+1. Check the meshStack documentation for known issues
+2. Review AWS Organizations and Control Tower logs
+3. Contact your meshStack administrator for assistance
+4. Submit a support ticket for unresolved issues
+
+## Next Steps
+
+- Review available landing zone templates for your organization
+- Understand the compliance requirements for your workloads
+- Plan your AWS account structure and organization
+- Familiarize yourself with AWS Organizations and Control Tower concepts
+
+For more information about landing zones in meshStack, see our [Landing Zones Overview](../landing-zones.mdx) page.
