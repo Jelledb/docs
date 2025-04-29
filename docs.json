@@ -30,12 +30,16 @@
             "pages": [
               "userdocs/overview",
               "userdocs/marketplace-overview",
-              "userdocs/workspace"
+              "userdocs/workspace",
+              "userdocs/marketplace-overview",
+              "userdocs/overview"
             ]
           },
           {
             "group": "Administrator Docs",
             "pages": [
+              "admindocs/replication",
+              "admindocs/onboarding",
               "admindocs/replication",
               "admindocs/onboarding"
             ]
