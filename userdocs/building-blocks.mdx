@@ -23,6 +23,28 @@ Building Blocks are designed to work seamlessly within the meshStack ecosystem:
   </Card>
 </CardGroup>
 
+### Azure Stack Sets Integration
+
+meshStack now supports Azure Stack Sets in landing zones, enabling powerful multi-subscription management capabilities:
+
+<AccordionGroup>
+  <Accordion title="Cross-Subscription Deployment" icon="network-wired">
+    Azure Stack Sets allow Building Blocks to be deployed consistently across multiple Azure subscriptions, making it easier to maintain standardization at scale.
+  </Accordion>
+  
+  <Accordion title="Centralized Management" icon="rectangle-list">
+    Platform teams can define and update policies, resources, and configurations once and apply them across multiple subscriptions automatically.
+  </Accordion>
+  
+  <Accordion title="Hierarchical Compliance" icon="shield-halved">
+    Implement organization-wide governance policies that cascade down through your Azure subscription hierarchy while maintaining compliance at every level.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Azure Stack Sets integration is particularly useful for organizations managing multiple Azure subscriptions that need to maintain consistent policies, security controls, and resource configurations across their entire Azure estate.
+</Note>
+
 ### Relationship with Projects and Tenants
 
 Building Blocks operate at the tenant level within your meshStack projects:
@@ -117,6 +139,7 @@ Building Blocks are particularly useful for:
 - Deploying security controls and monitoring solutions
 - Establishing consistent backup and disaster recovery solutions
 - Implementing organization-specific compliance requirements
+- Managing Azure Stack Sets across multiple subscriptions
 
 ## Troubleshooting
 
