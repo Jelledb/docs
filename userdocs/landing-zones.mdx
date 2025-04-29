@@ -1,0 +1,89 @@
+---
+title: "Landing Zones in meshStack"
+---
+
+## What are Landing Zones?
+
+Landing Zones in meshStack are pre-configured templates that provide a standardized, secure, and compliant foundation for your cloud resources. When you create a new tenant in meshStack, you'll select a landing zone that matches your needs and use case. These templates are created and maintained by your organization's cloud platform teams to ensure all cloud resources meet security, compliance, and operational requirements from day one.
+
+## Benefits of Landing Zones
+
+<CardGroup cols={2}>
+  <Card title="Instant Compliance" icon="shield-check">
+    Start with pre-configured security policies, access controls, and compliance settings that match your organization's requirements.
+  </Card>
+  <Card title="Faster Time to Cloud" icon="rocket">
+    Skip the complex setup process and get started with cloud resources that are ready for production workloads.
+  </Card>
+  <Card title="Best Practices Built-in" icon="star">
+    Benefit from organization-approved architectures and configurations that follow cloud provider and industry best practices.
+  </Card>
+  <Card title="Standardization" icon="cubes">
+    Ensure consistency across all cloud environments with standardized configurations and policies.
+  </Card>
+</CardGroup>
+
+## How Landing Zones Work
+
+<Steps>
+  <Step title="Select a Platform">
+    When creating a new tenant, first choose which cloud platform you want to use (AWS, Azure, GCP, etc.).
+  </Step>
+  <Step title="Choose a Landing Zone">
+    Based on your selected platform, you'll see available landing zone templates that match your use case (e.g., development, production, or specific workload types).
+  </Step>
+  <Step title="Automatic Configuration">
+    meshStack automatically provisions your tenant using the landing zone template, applying all necessary policies, configurations, and security controls.
+  </Step>
+  <Step title="Start Building">
+    Once provisioned, you can immediately start using your cloud resources with the confidence that you're following organizational best practices.
+  </Step>
+</Steps>
+
+## Platform-Specific Landing Zones
+
+Different cloud providers have their own specific implementation of landing zones. meshStack supports landing zones for:
+
+<CardGroup cols={3}>
+  <Card title="AWS Landing Zones" icon="aws" href="/userdocs/landing-zones/aws">
+    Built on AWS Control Tower and Organizations
+  </Card>
+  <Card title="Azure Landing Zones" icon="microsoft" href="/userdocs/landing-zones/azure">
+    Leveraging Azure Management Groups and Policies
+  </Card>
+  <Card title="GCP Landing Zones" icon="google" href="/userdocs/landing-zones/gcp">
+    Using GCP Organizations and Folders
+  </Card>
+</CardGroup>
+
+## Important Considerations
+
+<Accordion title="Landing Zone Selection is Permanent" icon="lock">
+  Once you select a landing zone for a tenant, it cannot be changed. Make sure to choose the appropriate landing zone that matches your requirements.
+</Accordion>
+
+<Accordion title="Available Landing Zones" icon="list-check">
+  The landing zones available to you depend on your organization's setup and policies. Your cloud platform teams maintain these templates to ensure they meet current requirements.
+</Accordion>
+
+<Accordion title="Customization Options" icon="sliders">
+  While landing zones provide a standardized foundation, you may still have some flexibility to configure certain aspects of your tenant within the guardrails set by the landing zone.
+</Accordion>
+
+## Best Practices
+
+<Info>
+Always review the documentation for your chosen landing zone to understand the included configurations, policies, and any specific requirements or limitations.
+</Info>
+
+1. **Understand Your Needs**: Choose a landing zone that matches your workload requirements and compliance needs.
+2. **Review Documentation**: Familiarize yourself with the specific configurations and policies included in your chosen landing zone.
+3. **Plan Ahead**: Since landing zone selection is permanent, consider future requirements when making your choice.
+4. **Engage Platform Teams**: If unsure, consult with your organization's cloud platform teams for guidance on landing zone selection.
+
+## Related Topics
+
+- [Workspace Management](/docs/meshcloud.workspace.html)
+- [Project Configuration](/docs/meshcloud.project.html)
+- [Tenant Management](/docs/meshcloud.tenant.html)
+- [Building Blocks](/docs/administration.building-blocks.html)
