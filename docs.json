@@ -51,7 +51,8 @@
             "pages": [
               "api-reference/endpoint/endpoint1",
               "api-reference/endpoint/endpoint2",
-              "api-reference/endpoint/endpoint3"
+              "api-reference/endpoint/endpoint3",
+              "api-reference/overview"
             ]
           }
         ]
